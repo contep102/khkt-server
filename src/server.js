@@ -49,12 +49,12 @@ app.use("/peerjs", peerServer);
 const io = new Server(server, {
   path: "/socket.io",
   pingTimeout: 60000,
+  allowEIO3: true,
   cors: {
     origin: "*",
     method: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
-    allowEIO3: true,
   },
 });
 
