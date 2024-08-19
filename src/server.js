@@ -47,7 +47,7 @@ app.use("/peerjs", peerServer);
 
 // Socket.io configuration
 const io = new Server(server, {
-  path: "/",
+  path: "/socket.io",
   pingTimeout: 60000,
   cors: {
     origin: "*",
