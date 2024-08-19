@@ -59,6 +59,7 @@ const io = new Server(server, {
     allowedHeaders: ["Content-Type"],
     credentials: true,
   },
+  allowEIO3: true,
 });
 
 io.on("connection", (socket) => {
