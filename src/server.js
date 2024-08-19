@@ -15,6 +15,7 @@ const app = express();
 const server = http.createServer(app);
 
 // CORS configuration
+app.set("trust proxy", 1);
 const corsOptions = {
   origin: "*",
   methods: ["GET", "POST"],
@@ -40,7 +41,7 @@ app.use(cors(corsOptions));
 // Set up PeerJS server
 const peerServer = ExpressPeerServer(server, {
   debug: true,
-  secure: false,
+  secure: true,
 });
 
 // Routes
