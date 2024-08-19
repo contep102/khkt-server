@@ -16,7 +16,10 @@ const server = http.createServer(app);
 
 // CORS configuration
 const corsOptions = {
-  origin: "*", // Adjust as needed for security
+  origin: "*",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true, // Adjust as needed for security
 };
 
 // Middleware
@@ -49,11 +52,11 @@ app.use("/peerjs", peerServer);
 const io = new Server(server, {
   path: "/socket.io",
   pingTimeout: 60000,
-  allowEIO3: true,
+  pingInterval: 25000,
   cors: {
     origin: "*",
-    method: ["GET", "POST"],
-    allowedHeaders: ["my-custom-header"],
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
     credentials: true,
   },
 });
