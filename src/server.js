@@ -54,6 +54,7 @@ const io = new Server(server, {
     method: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
+    allowEIO3: true,
   },
 });
 
